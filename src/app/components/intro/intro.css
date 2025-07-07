@@ -1,0 +1,31 @@
+.typing-cursor {
+  display: inline-block;
+  width: 1ch;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+@keyframes introMoveFade {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+    text-align: center;
+  }
+  80% {
+    transform: translate(var(--moveX, 0), var(--moveY, 0));
+    opacity: 1;
+    text-align: left;
+  }
+  100% {
+    transform: translate(var(--moveX, 0), var(--moveY, 0));
+    opacity: 0;
+    text-align: left;
+  }
+}
+
+.animate-intro {
+  animation: introMoveFade 5s cubic-bezier(0.4,0,0.2,1) 0s forwards;
+}

@@ -1,0 +1,20 @@
+<section class="min-h-screen flex flex-col md:flex-row items-center justify-center bg-black text-white px-6 gap-8">
+  <!-- Left content -->
+  <div class="flex-1 text-center md:text-left">
+    <h1 class="text-5xl md:text-6xl font-extrabold mb-4">
+      Hi, I’m <span class="text-indigo-500">Rajarajan Madesh</span>
+    </h1>
+    <p [@fadeInOut]="currentIndex" class="text-xl md:text-2xl text-gray-300 max-w-md min-h-[6rem] transition-opacity duration-500">
+      {{ currentText }}
+    </p>
+  </div>
+
+  <!-- Right animation -->
+  <div class="flex-1 flex justify-center md:justify-end">
+    <ng-lottie 
+        [options]="options" 
+        [@fadeInOut]="currentIndex" 
+        style="width: 300px; height: 300px;">
+    </ng-lottie>
+  </div>
+</section>

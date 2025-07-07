@@ -1,0 +1,12 @@
+.animate-blink {
+  display: inline-block;
+  width: 1px;
+  background-color: #60a5fa;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}

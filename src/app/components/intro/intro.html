@@ -1,0 +1,14 @@
+<div
+  class="fixed inset-0 z-50 bg-black text-white flex items-center justify-center overflow-hidden"
+>
+  <h1 
+    class="text-5xl md:text-6xl font-extrabold mb-4 animate-intro text-left"
+    style="
+      --moveX: calc(-50vw + 2.5rem); /* move to left padding of home */
+      --moveY: calc(-10vh + 0.5rem); /* move up to home heading position */
+    "
+    id="intro-heading"
+  >
+    {{ displayedPrefix }}<span class="text-indigo-500">{{ displayedName }}</span><span class="typing-cursor">|</span>
+  </h1>
+</div>

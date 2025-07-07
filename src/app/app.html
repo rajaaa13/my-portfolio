@@ -1,0 +1,26 @@
+<!-- Fixed Navbar -->
+<nav class="fixed top-0 left-0 w-full bg-black text-white z-50 shadow-md">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    <div class="text-lg font-bold">My Portfolio</div>
+    <ul class="flex space-x-6">
+      <li><a href="#hero" class="hover:text-blue-400">Home</a></li>
+      <li><a href="#about" class="hover:text-blue-400">About</a></li>
+      <li><a href="#career" class="hover:text-blue-400">Career</a></li>
+      <li><a href="#education" class="hover:text-blue-400">Education</a></li>
+      <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<app-intro *ngIf="showIntro"></app-intro>
+
+<!-- Main Content with scroll smoothing -->
+<main 
+  class="scroll-smooth pt-20 transition-opacity duration-1000 ease-in-out"
+  [ngClass]="{ 'opacity-0': showIntro, 'opacity-100': !showIntro }">
+  <section id="hero"><app-home></app-home></section>
+  <section id="about"><app-about></app-about></section>
+  <section id="career"><app-career></app-career></section>
+  <section id="education"><app-education></app-education></section>
+  <section id="contact"><app-contact></app-contact></section>
+</main>
