@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { TranslationService } from '../../services/translation.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-intro',
@@ -8,15 +10,28 @@ import { Component } from '@angular/core';
   imports: [CommonModule],
   styleUrls: ['./intro.css']
 })
-export class Intro {
-  prefix = "Hi, I’m ";
-  name = "Rajarajan Madesh";
+export class Intro implements OnInit, OnDestroy {
   displayedPrefix = '';
   displayedName = '';
-  typingSpeed = 60; // ms per character
+  typingSpeed = 60;
+  private prefix = '';
+  private name = '';
+  private langSub?: Subscription;
+
+  constructor(public translation: TranslationService) {}
 
   ngOnInit(): void {
-    this.typePrefix();
+    this.langSub = this.translation.translations$.subscribe(() => {
+      this.prefix = this.translation.translate('base.intro_prefix');
+      this.name = this.translation.translate('base.intro_suffix');
+      this.displayedPrefix = '';
+      this.displayedName = '';
+      this.typePrefix();
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.langSub?.unsubscribe();
   }
 
   typePrefix(index: number = 0) {

@@ -1,20 +1,22 @@
-<div class="py-16 px-4 md:px-12 bg-gray-900 text-white">
-  <h2 class="text-4xl font-bold mb-12 text-center">Career Journey</h2>
-
-  <div class="relative border-l border-gray-700 pl-8">
+<section class="bg-[#0f0f0f] text-white py-20 px-4 md:px-10 lg:px-20">
+  <h2 class="text-4xl font-bold mb-12 text-center">{{title}} ({{calculateYearsInDecimal('09-July-2018')}} Yrs)</h2>
+  <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
     <div
       *ngFor="let job of careerList; let i = index"
-      class="mb-12 opacity-0 transform translate-y-10 transition-all duration-700"
-      [class.opacity-100]="visibleIndex >= i"
-      [class.translate-y-0]="visibleIndex >= i"
+      class="career-card opacity-0 blur-sm transform transition-all duration-700 ease-in-out"
+      [ngClass]="{
+        'translate-x-[-50px]': i % 2 === 0,
+        'translate-x-[50px]': i % 2 !== 0
+      }"
     >
-      <div class="absolute -left-[10px] top-1 w-4 h-4 rounded-full bg-blue-500 border-2 border-white"></div>
-
-      <h3 class="text-xl font-semibold">{{ job.role }}</h3>
-      <p class="text-sm text-gray-400 mb-2">{{ job.company }} — {{ job.period }}</p>
-      <ul class="list-disc ml-5 text-gray-300 space-y-1">
-        <li *ngFor="let point of job.points">{{ point }}</li>
-      </ul>
+      <div class="bg-white bg-opacity-5 backdrop-blur-md p-6 rounded-xl shadow-xl h-full hover:scale-[1.02] transition-transform">
+        <h3 class="text-xl font-semibold text-cyan-300 mb-1">{{ job.role }}</h3>
+        <p class="text-sm text-gray-300 mb-2">{{ job.company }}</p>
+        <p class="text-xs text-gray-400 mb-4">{{ job.period }}</p>
+        <ul class="list-disc list-inside text-sm space-y-1 text-gray-200">
+          <li *ngFor="let point of job.points">{{ point }}</li>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
+</section>

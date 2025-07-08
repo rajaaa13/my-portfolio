@@ -4,6 +4,7 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import player from 'lottie-web';
 import { App } from './app/app';
 import 'zone.js'
+import { provideHttpClient } from '@angular/common/http';
 
 export function playerFactory() {
   return player;
@@ -12,6 +13,7 @@ export function playerFactory() {
 bootstrapApplication(App, {
   providers: [
     provideAnimations(),
-    provideLottieOptions({ player: playerFactory })
+    provideLottieOptions({ player: playerFactory }),
+    provideHttpClient()
   ],
 });

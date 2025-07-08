@@ -1,0 +1,131 @@
+{
+    "base": {
+        "title": "My Portfolio",
+        "navbar" : [
+            { "name": "Home", "link": "#home" },
+            { "name": "About", "link": "#about" },
+            { "name": "Career", "link": "#career" },
+            { "name": "Education", "link": "#education" },
+            { "name": "Contact", "link": "#contact" }
+        ],
+        "intro_prefix": "Hi, I’m ",
+        "intro_suffix": "Rajarajan Madesh"
+    },
+    "home": {
+        "intro_prefix": "Hi, I’m ",
+        "intro_suffix": "Rajarajan Madesh",
+        "slides" : [
+        {
+          "text": "Frontend Developer, who loves to develops in angular and create beautiful user interfaces.",
+          "animationPath": "assets/lottie/developer.json"
+        },
+        {
+          "text": "Photography Enthusiast, who always carries a camera to capture the beauty of the world.",
+          "animationPath": "assets/lottie/photographer.json"
+        },
+        {
+          "text": "Movie Buff, who loves to see the world through the lens of cinema",
+          "animationPath": "assets/lottie/filmbuff.json"
+        }
+        ]
+    },
+    "career" : {
+        "title" : "Career Journey",
+        "careerList": [
+            {
+                "role": "Senior Systems Engineer",
+                "company": "Infosys Limited",
+                "period": "2018 - 2021",
+                "points": [
+                  "Worked for Japanese construction company",
+                  "developed internal applications, to design and manage construction projects",
+                  "to log & maintain data related to contruction projects"
+                ]
+            },
+            {
+                "role": "Senior Analyst",
+                "company": "Accenture",
+                "period": "2021 - 2023",
+                "points": [
+                  "Developed Industry standard Enterprise applications",
+                  "which monitors the health of the plant, can manage assets",
+                  "can able to create KPI dashboards, to check standard of performance"
+                ]
+            },
+            {
+                "role": "IT Analyst (C2)",
+                "company": "Tata Consultancy Services",
+                "period": "2023 - Present",
+                "points": [
+                  "Worked for european banking clients",
+                  "Developed finance applications",
+                  "migrated legacy systems to Angular"
+                ]
+            }
+    ]
+    },
+    "about" : {
+        "aboutSteps" : [
+            {
+                "title": "Born & Raised in Tamil Nadu 🇮🇳",
+                "content": "I come from Salem, a culturally rich town in Tamil Nadu, India. Growing up here taught me the value of simplicity, community, and resilience — which still guides my work ethic today.",
+                "bgImage": "assets/about/aboutSalem.jpg"
+            },
+            {
+                "title": "I’m Rajarajan Madesh 👨‍💻",
+                "content": "I’m a frontend developer working at TCS Siruseri, with a passion for Angular, smooth UI/UX, and turning complex ideas into clean code. By day I code, by night I create, explore, and learn.",
+                "bgImage": "assets/about/aboutWork.jpg"
+            },
+            {
+                "title": "Beyond the Keyboard 🎬📸",
+                "content": "I’m also a photography lover, a movie buff, and a curious soul. I find inspiration in visuals, storytelling, and the little moments that make life beautiful.",
+                "bgImage": "assets/about/aboutBeyondWork.jpg"
+            },
+            {
+                "title": "What Drives Me 🌱",
+                "content": "Clean design. Honest work. Lifelong learning. I believe in building things that matter and staying humble while constantly evolving as a creator.",
+                "bgImage": "assets/about/aboutDrivingForce.jpg"
+            }
+        ]
+    },
+    "education" : {
+        "title": "Education",
+        "educationList": [
+            {
+              "degree": "Secondary Education",
+              "institution": "Sri Vidya Mandir School",
+              "duration": "till 2014",
+              "score": "92.5 %"
+            },
+            {
+              "degree": "Higher Secondary Education",
+              "institution": "SRV Boys Higher Secondary School",
+              "duration": "2012 - 2014",
+              "score": "86.5 %"
+            },
+            {
+              "degree": "B.E. (Electrical and Electronics Engineering)",
+              "institution": "Sona College of Technology",
+              "duration": "2014 - 2018",
+              "score": "7.76 CGPA"
+            }
+        ]         
+    },
+    "contact" : {
+        "title": "Contact Me",
+        "form": {
+            "name": "Your Name",
+            "email": "Your Email",
+            "message": "Message",
+            "namePlaceholder": "Enter your name",
+            "emailPlaceholder": "Enter your email",
+            "messagePlaceholder": "Type your message..."
+        },
+        "requiredFields": "Please fill out all required fields.",
+        "submitButton": "Send Message",
+        "thankyouTitle": "Thank You!",
+        "thankYouMessage": "Hey, Really thanks for taking your time and reaching out! I'll get back to you soon !",
+        "successMessage": "✅ Message sent successfully!",
+        "errorMessage": "❌ Email send failed. Please try again later."
+    }
+}

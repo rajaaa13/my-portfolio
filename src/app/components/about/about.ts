@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener, ViewChildren, QueryList, ElementRef, AfterViewInit } from '@angular/core';
+import { TranslationService } from '../../services/translation.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-about',
@@ -9,32 +11,18 @@ import { Component, HostListener, ViewChildren, QueryList, ElementRef, AfterView
   imports: [CommonModule],
 })
 export class About implements AfterViewInit {
-aboutSteps = [
-  {
-    title: 'Born & Raised in Tamil Nadu 🇮🇳',
-    content: 'I come from Salem, a culturally rich town in Tamil Nadu, India. Growing up here taught me the value of simplicity, community, and resilience — which still guides my work ethic today.',
-    bgImage: 'assets/about/aboutSalem.jpg'
-  },
-  {
-    title: 'I’m Rajarajan Madesh 👨‍💻',
-    content: 'I’m a frontend developer working at TCS Siruseri, with a passion for Angular, smooth UI/UX, and turning complex ideas into clean code. By day I code, by night I create, explore, and learn.',
-    bgImage: 'assets/about/aboutWork.jpg'
-  },
-  {
-    title: 'Beyond the Keyboard 🎬📸',
-    content: 'I’m also a photography lover, a movie buff, and a curious soul. I find inspiration in visuals, storytelling, and the little moments that make life beautiful.',
-    bgImage: 'assets/about/aboutBeyondWork.jpg'
-  },
-  {
-    title: 'What Drives Me 🌱',
-    content: 'Clean design. Honest work. Lifelong learning. I believe in building things that matter and staying humble while constantly evolving as a creator.',
-    bgImage: 'assets/about/aboutDrivingForce.jpg'
-  },
-];
-
+  aboutSteps : { title: string; content: string; period: string; bgImage: string }[] = [];
   currentIndex = 0;
-
+  langSub?: Subscription;
   @ViewChildren('stepMarker') steps!: QueryList<ElementRef>;
+
+  constructor(public translation: TranslationService) {}
+  
+  ngOnInit(): void {
+    this.langSub = this.translation.translations$.subscribe(() => {
+      this.aboutSteps = this.translation.translate('about.aboutSteps') as unknown as { title: string; content: string; period: string; bgImage: string }[];
+    });
+  }
 
   ngAfterViewInit(): void {
     this.onScroll(); // set initial index based on position
@@ -51,5 +39,9 @@ aboutSteps = [
         this.currentIndex = index;
       }
     });
+  }
+
+  ngOnDestroy(): void {
+    this.langSub?.unsubscribe();
   }
 }

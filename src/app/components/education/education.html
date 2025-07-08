@@ -1,4 +1,18 @@
-<section class="min-h-screen flex items-center justify-center bg-gray-900 text-white">
-  <h2 class="text-4xl font-bold">my education</h2>
-  <h2 class="text-4xl font-bold">COMING SOON!</h2>
-</section>
+    <section class="bg-[#0e0e0e] text-white py-20 px-4 md:px-10 lg:px-20">
+      <h2 class="text-4xl font-bold mb-12 text-center">{{title}}</h2>
+
+      <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3 perspective">
+        <div
+          *ngFor="let edu of educationList; let i = index"
+          class="education-card opacity-0 blur-sm transform transition-all duration-700 ease-in-out hover:scale-[1.03] hover:shadow-xl hover:shadow-cyan-500/10 bg-white bg-opacity-5 backdrop-blur-lg rounded-xl p-6 cursor-default"
+          [ngClass]="{
+            'translate-y-10': true
+          }"
+        >
+          <h3 class="text-xl font-semibold text-cyan-300 mb-1">{{ edu.degree }}</h3>
+          <p class="text-sm text-gray-300 mb-2">{{ edu.institution }}</p>
+          <p class="text-xs text-gray-400 mb-1">{{ edu.duration }}</p>
+          <p class="text-sm text-gray-200 font-medium">{{ edu.score }}</p>
+        </div>
+      </div>
+    </section>

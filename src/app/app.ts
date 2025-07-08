@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslationService } from './services/translation.service';
 import { About } from './components/about/about';
 import { Career } from './components/career/career';
 import { Education } from './components/education/education';
@@ -17,6 +18,8 @@ export class App {
   protected title = 'my-portfolio';
   showIntro = true;
 
+  constructor(public translation: TranslationService) {}
+
   ngOnInit(): void {
     const visited = localStorage.getItem('visited');
     if (visited) {
@@ -27,5 +30,9 @@ export class App {
         this.showIntro = false;
       }, 5000);
     }
+  }
+
+  changeLanguage(lang: string) {
+    this.translation.setLanguage(lang);
   }
 }

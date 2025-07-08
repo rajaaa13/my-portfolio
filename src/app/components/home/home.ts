@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { LottieComponent } from 'ngx-lottie';
 import { AnimationOptions } from 'ngx-lottie';
 import { trigger, style, transition, animate } from '@angular/animations';
+import { TranslationService } from '../../services/translation.service';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-home',
   imports: [CommonModule, LottieComponent],
@@ -18,26 +20,29 @@ import { trigger, style, transition, animate } from '@angular/animations';
   ]
 })
 export class Home {
-  slides = [
-    {
-      text: 'Frontend Developer, who loves to develops in angular and create beautiful user interfaces.',
-      animationPath: 'assets/lottie/developer.json'
-    },
-    {
-      text: 'Photography Enthusiast, who always carries a camera to capture the beauty of the world.',
-      animationPath: 'assets/lottie/photographer.json'
-    },
-    {
-      text: 'Movie Buff, who loves to see the world through the lens of cinema',
-      animationPath: 'assets/lottie/filmbuff.json'
-    }
-  ];
+  langSub?: Subscription;
+  prefix = '';
+  name = '';
   displayedText = '';
   currentIndex = 0;
-  currentText = this.slides[0].text;
-  options: AnimationOptions = { path: this.slides[0].animationPath };
+  slides: {text: string; animationPath: string;}[] = [];
+  currentText = '';
+  options: AnimationOptions = {};
+
+  constructor(public translation: TranslationService) {}
 
   ngOnInit(): void {
+    this.langSub = this.translation.translations$.subscribe(() => {
+      this.prefix = this.translation.translate('home.intro_prefix');
+      this.name = this.translation.translate('home.intro_suffix');
+      this.slides = this.translation.translate('home.slides') as unknown as {text: string; animationPath: string;} [];
+      this.currentText = this.slides[0].text;
+      this.options = { path: this.slides[0].animationPath };
+    });
+    this.setSlidesTextandAnimation();
+  }
+
+  setSlidesTextandAnimation() {
     setInterval(() => {
       this.currentIndex = (this.currentIndex + 1) % this.slides.length;
       this.currentText = this.slides[this.currentIndex].text;
@@ -45,5 +50,9 @@ export class Home {
         path: this.slides[this.currentIndex].animationPath
       };
     }, 5000);
+  }
+
+  ngOnDestroy(): void {
+    this.langSub?.unsubscribe();
   }
 }
