@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { TranslationService } from '../../services/translation.service';
 import { Subscription } from 'rxjs';
 
@@ -9,16 +9,12 @@ import { Subscription } from 'rxjs';
   templateUrl: './career.html',
   styleUrl: './career.css',
 })
-export class Career implements AfterViewInit {
+export class Career {
   careerList : { role: string; company: string; period: string; points: string[] }[] = [];
   langSub?: Subscription;
   visibleIndex = -1;
   title = ''; 
 constructor(public translation: TranslationService) {}
-
-ngAfterViewInit(): void {
-  throw new Error('Method not implemented.');
-}
 
 ngOnInit(): void {
   this.langSub = this.translation.translations$.subscribe(() => {

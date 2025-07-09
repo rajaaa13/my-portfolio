@@ -17,6 +17,7 @@ import { CommonModule } from '@angular/common';
 export class App {
   protected title = 'my-portfolio';
   showIntro = true;
+  isMobileMenuOpen = false;
 
   constructor(public translation: TranslationService) {}
 
