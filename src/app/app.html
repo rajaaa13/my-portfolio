@@ -13,9 +13,16 @@
     </ul>
 
     <!-- Language Selector -->
-    <select #langSelect (change)="changeLanguage(langSelect.value)" class="hidden md:block ml-4 bg-black text-white border border-gray-600 rounded px-2 py-1">
-      <option value="en" [selected]="(translation.currentLang$ | async) === 'en'">English</option>
-      <option value="ta" [selected]="(translation.currentLang$ | async) === 'ta'">தமிழ்</option>
+    <select 
+      #langSelect 
+      (change)="changeLanguage(langSelect.value)" 
+      class="hidden md:block ml-4 bg-black text-white border border-gray-600 rounded-md px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition duration-200 cursor-pointer shadow-sm hover:border-cyan-400">
+        <option value="en" [selected]="(translation.currentLang$ | async) === 'en'">English</option>
+        <option value="ta" [selected]="(translation.currentLang$ | async) === 'ta'">Tamil</option>
+        <option value="hi" [selected]="(translation.currentLang$ | async) === 'hi'">Hindi</option>
+        <option value="de" [selected]="(translation.currentLang$ | async) === 'de'">German</option>
+        <option value="nl" [selected]="(translation.currentLang$ | async) === 'nl'">Dutch</option>
+        <option value="ja" [selected]="(translation.currentLang$ | async) === 'ja'">Japanese</option>
     </select>
 
     <!-- Hamburger Toggle -->
@@ -40,9 +47,16 @@
       <li><a href="#education" (click)="scrollToSection('education')" class="block py-1 hover:text-cyan-400">{{ translation.translate('base.navbar.3.name') }}</a></li>
       <li><a href="#contact" (click)="scrollToSection('contact')" class="block py-1 hover:text-cyan-400">{{ translation.translate('base.navbar.4.name') }}</a></li>
       <li>
-        <select #langSelect (change)="changeLanguage(langSelect.value)" class="w-full bg-black text-white border border-gray-600 rounded px-2 py-1 mt-2">
-          <option value="en" [selected]="(translation.currentLang$ | async) === 'en'">English</option>
-          <option value="ta" [selected]="(translation.currentLang$ | async) === 'ta'">தமிழ்</option>
+        <select 
+          #langSelect 
+          (change)="changeLanguage(langSelect.value)" 
+          class="w-full bg-black text-white border border-gray-600 rounded-md px-2 mt-2 py-1.5 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition duration-200 cursor-pointer shadow-sm hover:border-cyan-400">
+           <option value="en" [selected]="(translation.currentLang$ | async) === 'en'">English</option>
+           <option value="ta" [selected]="(translation.currentLang$ | async) === 'ta'">Tamil</option>
+           <option value="hi" [selected]="(translation.currentLang$ | async) === 'hi'">Hindi</option>
+           <option value="de" [selected]="(translation.currentLang$ | async) === 'de'">German</option>
+           <option value="nl" [selected]="(translation.currentLang$ | async) === 'nl'">Dutch</option>
+           <option value="ja" [selected]="(translation.currentLang$ | async) === 'ja'">Japanese</option>
         </select>
       </li>
     </ul>

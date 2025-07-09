@@ -1,0 +1,131 @@
+{
+  "base": {
+    "title": "Mijn Portfolio",
+    "navbar": [
+      { "name": "Home", "link": "#home" },
+      { "name": "Over mij", "link": "#about" },
+      { "name": "Carrière", "link": "#career" },
+      { "name": "Opleiding", "link": "#education" },
+      { "name": "Contact", "link": "#contact" }
+    ],
+    "intro_prefix": "Hoi, ik ben ",
+    "intro_suffix": "Rajarajan Madesh"
+  },
+  "home": {
+    "intro_prefix": "Hoi, ik ben ",
+    "intro_suffix": "Rajarajan Madesh",
+    "slides": [
+      {
+        "text": "Frontend-ontwikkelaar die graag met Angular werkt en mooie gebruikersinterfaces maakt.",
+        "animationPath": "assets/lottie/developer.json"
+      },
+      {
+        "text": "Fotografieliefhebber die altijd een camera bij zich heeft om de schoonheid van de wereld vast te leggen.",
+        "animationPath": "assets/lottie/photographer.json"
+      },
+      {
+        "text": "Filmliefhebber die graag de wereld bekijkt door de lens van cinema.",
+        "animationPath": "assets/lottie/filmbuff.json"
+      }
+    ]
+  },
+  "career": {
+    "title": "Carrièrepad",
+    "careerList": [
+      {
+        "role": "Senior Systems Engineer",
+        "company": "Infosys Limited",
+        "period": "2018 - 2021",
+        "points": [
+          "Werkte voor een Japans bouwbedrijf",
+          "Ontwikkelde interne toepassingen voor ontwerp en beheer van bouwprojecten",
+          "Vastleggen en beheren van gegevens over bouwprojecten"
+        ]
+      },
+      {
+        "role": "Senior Analyst",
+        "company": "Accenture",
+        "period": "2021 - 2023",
+        "points": [
+          "Ontwikkelde bedrijfsapplicaties volgens industriestandaarden",
+          "Bewaking van de gezondheid van installaties, beheer van activa",
+          "Mogelijkheid om KPI-dashboards te maken voor prestatiecontrole"
+        ]
+      },
+      {
+        "role": "IT-Analist (C2)",
+        "company": "Tata Consultancy Services",
+        "period": "2023 – Heden",
+        "points": [
+          "Werkte met Europese bankklanten",
+          "Ontwikkelde financiële toepassingen",
+          "Legacy-systemen gemigreerd naar Angular"
+        ]
+      }
+    ]
+  },
+  "about": {
+    "aboutSteps": [
+      {
+        "title": "Geboren en getogen in Tamil Nadu 🇮🇳",
+        "content": "Ik kom uit Salem, een cultureel rijke stad in Tamil Nadu, India. Opgroeien hier leerde me eenvoud, gemeenschap en doorzettingsvermogen — waarden die nog steeds mijn werkethiek bepalen.",
+        "bgImage": "assets/about/aboutSalem.jpg"
+      },
+      {
+        "title": "Ik ben Rajarajan Madesh 👨‍💻",
+        "content": "Ik ben een frontend-ontwikkelaar bij TCS Siruseri met een passie voor Angular, soepele UI/UX en het omzetten van complexe ideeën in heldere code.",
+        "bgImage": "assets/about/aboutWork.jpg"
+      },
+      {
+        "title": "Voorbij het toetsenbord 🎬📸",
+        "content": "Ik ben ook een liefhebber van fotografie, een filmfanaat en een nieuwsgierige geest. Ik vind inspiratie in beelden, verhalen en de kleine momenten die het leven mooi maken.",
+        "bgImage": "assets/about/aboutBeyondWork.jpg"
+      },
+      {
+        "title": "Wat mij drijft 🌱",
+        "content": "Strak design. Eerlijk werk. Levenslang leren. Ik geloof in het bouwen van dingen die ertoe doen en nederig blijven terwijl ik groei als maker.",
+        "bgImage": "assets/about/aboutDrivingForce.jpg"
+      }
+    ]
+  },
+  "education": {
+    "title": "Opleiding",
+    "educationList": [
+      {
+        "degree": "Voortgezet Onderwijs",
+        "institution": "Sri Vidya Mandir School",
+        "duration": "tot 2014",
+        "score": "92.5 %"
+      },
+      {
+        "degree": "Hoger Secundair Onderwijs",
+        "institution": "SRV Boys Higher Secondary School",
+        "duration": "2012 - 2014",
+        "score": "86.5 %"
+      },
+      {
+        "degree": "B.E. (Elektrotechniek en Elektronica)",
+        "institution": "Sona College of Technology",
+        "duration": "2014 - 2018",
+        "score": "7.76 CGPA"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Neem contact op",
+    "form": {
+      "name": "Uw naam",
+      "email": "Uw e-mailadres",
+      "message": "Bericht",
+      "namePlaceholder": "Voer uw naam in",
+      "emailPlaceholder": "Voer uw e-mailadres in",
+      "messagePlaceholder": "Typ uw bericht..."
+    },
+    "requiredFields": "Vul alle verplichte velden in.",
+    "submitButton": "Bericht verzenden",
+    "thankyouTitle": "Bedankt!",
+    "thankYouMessage": "Bedankt voor uw bericht! Ik neem zo snel mogelijk contact met u op.",
+    "successMessage": "✅ Bericht succesvol verzonden!",
+    "errorMessage": "❌ Verzenden mislukt. Probeer het later opnieuw."
+  }
+}

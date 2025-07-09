@@ -1,0 +1,131 @@
+{
+  "base": {
+    "title": "私のポートフォリオ",
+    "navbar": [
+      { "name": "ホーム", "link": "#home" },
+      { "name": "自己紹介", "link": "#about" },
+      { "name": "キャリア", "link": "#career" },
+      { "name": "学歴", "link": "#education" },
+      { "name": "お問い合わせ", "link": "#contact" }
+    ],
+    "intro_prefix": "こんにちは、私は",
+    "intro_suffix": "ラジャラジャン・マデッシュです"
+  },
+  "home": {
+    "intro_prefix": "こんにちは、私は",
+    "intro_suffix": "ラジャラジャン・マデッシュです",
+    "slides": [
+      {
+        "text": "Angular を使って開発し、美しいユーザーインターフェースを作ることが大好きなフロントエンド開発者です。",
+        "animationPath": "assets/lottie/developer.json"
+      },
+      {
+        "text": "常にカメラを持ち歩き、世界の美しさを写真に収めることが好きな写真愛好家です。",
+        "animationPath": "assets/lottie/photographer.json"
+      },
+      {
+        "text": "映画を通して世界を見ることが好きな映画愛好家です。",
+        "animationPath": "assets/lottie/filmbuff.json"
+      }
+    ]
+  },
+  "career": {
+    "title": "キャリアの歩み",
+    "careerList": [
+      {
+        "role": "シニアシステムエンジニア",
+        "company": "インフォシス株式会社",
+        "period": "2018 - 2021",
+        "points": [
+          "日本の建設会社向けに業務",
+          "建設プロジェクトを設計・管理する社内アプリケーションを開発",
+          "建設プロジェクトに関するデータの記録と管理"
+        ]
+      },
+      {
+        "role": "シニアアナリスト",
+        "company": "アクセンチュア",
+        "period": "2021 - 2023",
+        "points": [
+          "業界標準のエンタープライズアプリケーションを開発",
+          "工場の状態を監視し、資産管理を行う",
+          "パフォーマンスを確認するためのKPIダッシュボードを作成可能"
+        ]
+      },
+      {
+        "role": "ITアナリスト (C2)",
+        "company": "タタ・コンサルタンシー・サービシズ",
+        "period": "2023年〜現在",
+        "points": [
+          "ヨーロッパの銀行クライアント向けに業務",
+          "金融アプリケーションを開発",
+          "レガシーシステムを Angular に移行"
+        ]
+      }
+    ]
+  },
+  "about": {
+    "aboutSteps": [
+      {
+        "title": "タミル・ナードゥで生まれ育ちました 🇮🇳",
+        "content": "私はインドのタミル・ナードゥ州の文化豊かな都市セーラム出身です。ここでの生活から、シンプルさ、コミュニティ、忍耐の価値を学びました。",
+        "bgImage": "assets/about/aboutSalem.jpg"
+      },
+      {
+        "title": "私はラジャラジャン・マデッシュです 👨‍💻",
+        "content": "TCS Siruseriで働くフロントエンド開発者で、Angular、スムーズなUI/UX、複雑なアイデアをクリーンなコードに変換することに情熱を注いでいます。",
+        "bgImage": "assets/about/aboutWork.jpg"
+      },
+      {
+        "title": "キーボードの外の世界 🎬📸",
+        "content": "私は写真と映画が好きな好奇心旺盛な人間でもあります。ビジュアル、物語、小さな日常の瞬間にインスピレーションを得ています。",
+        "bgImage": "assets/about/aboutBeyondWork.jpg"
+      },
+      {
+        "title": "私を動かすもの 🌱",
+        "content": "シンプルで美しいデザイン。誠実な仕事。生涯学習。価値あるものを創り、常に謙虚に成長し続けることを信じています。",
+        "bgImage": "assets/about/aboutDrivingForce.jpg"
+      }
+    ]
+  },
+  "education": {
+    "title": "学歴",
+    "educationList": [
+      {
+        "degree": "中等教育",
+        "institution": "スリ・ヴィディヤ・マンディル学校",
+        "duration": "2014年まで",
+        "score": "92.5 %"
+      },
+      {
+        "degree": "高等中等教育",
+        "institution": "SRV男子高等学校",
+        "duration": "2012 - 2014",
+        "score": "86.5 %"
+      },
+      {
+        "degree": "学士（電気電子工学）",
+        "institution": "ソナ工科大学",
+        "duration": "2014 - 2018",
+        "score": "7.76 CGPA"
+      }
+    ]
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "form": {
+      "name": "お名前",
+      "email": "メールアドレス",
+      "message": "メッセージ",
+      "namePlaceholder": "お名前を入力してください",
+      "emailPlaceholder": "メールアドレスを入力してください",
+      "messagePlaceholder": "メッセージを入力してください..."
+    },
+    "requiredFields": "すべての必須項目を入力してください。",
+    "submitButton": "メッセージを送信",
+    "thankyouTitle": "ありがとうございます！",
+    "thankYouMessage": "ご連絡ありがとうございます！できるだけ早く返信いたします。",
+    "successMessage": "✅ メッセージが正常に送信されました！",
+    "errorMessage": "❌ メールの送信に失敗しました。後でもう一度お試しください。"
+  }
+}

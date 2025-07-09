@@ -1,0 +1,131 @@
+{
+  "base": {
+    "title": "Mein Portfolio",
+    "navbar": [
+      { "name": "Startseite", "link": "#home" },
+      { "name": "Über mich", "link": "#about" },
+      { "name": "Karriere", "link": "#career" },
+      { "name": "Bildung", "link": "#education" },
+      { "name": "Kontakt", "link": "#contact" }
+    ],
+    "intro_prefix": "Hallo, ich bin ",
+    "intro_suffix": "Rajarajan Madesh"
+  },
+  "home": {
+    "intro_prefix": "Hallo, ich bin ",
+    "intro_suffix": "Rajarajan Madesh",
+    "slides": [
+      {
+        "text": "Frontend-Entwickler, der gerne mit Angular arbeitet und schöne Benutzeroberflächen erstellt.",
+        "animationPath": "assets/lottie/developer.json"
+      },
+      {
+        "text": "Fotografie-Enthusiast, der stets eine Kamera bei sich trägt, um die Schönheit der Welt festzuhalten.",
+        "animationPath": "assets/lottie/photographer.json"
+      },
+      {
+        "text": "Filmfan, der die Welt gerne durch das Objektiv des Kinos sieht.",
+        "animationPath": "assets/lottie/filmbuff.json"
+      }
+    ]
+  },
+  "career": {
+    "title": "Karriereweg",
+    "careerList": [
+      {
+        "role": "Senior Systems Engineer",
+        "company": "Infosys Limited",
+        "period": "2018 - 2021",
+        "points": [
+          "Arbeitete für ein japanisches Bauunternehmen",
+          "Entwicklung interner Anwendungen zur Planung und Verwaltung von Bauprojekten",
+          "Erfassung und Pflege von Daten zu Bauprojekten"
+        ]
+      },
+      {
+        "role": "Senior Analyst",
+        "company": "Accenture",
+        "period": "2021 - 2023",
+        "points": [
+          "Entwicklung von Unternehmensanwendungen nach Industriestandard",
+          "Überwachung des Anlagenzustands, Asset-Management",
+          "Erstellung von KPI-Dashboards zur Leistungsbewertung"
+        ]
+      },
+      {
+        "role": "IT Analyst (C2)",
+        "company": "Tata Consultancy Services",
+        "period": "2023 - Gegenwart",
+        "points": [
+          "Arbeitete mit europäischen Bankkunden",
+          "Entwicklung von Finanzanwendungen",
+          "Migration von Legacy-Systemen zu Angular"
+        ]
+      }
+    ]
+  },
+  "about": {
+    "aboutSteps": [
+      {
+        "title": "Geboren & aufgewachsen in Tamil Nadu 🇮🇳",
+        "content": "Ich komme aus Salem, einer kulturell reichen Stadt in Tamil Nadu, Indien. Das Aufwachsen dort hat mich Bescheidenheit, Gemeinschaft und Belastbarkeit gelehrt — Werte, die bis heute meine Arbeitsmoral prägen.",
+        "bgImage": "assets/about/aboutSalem.jpg"
+      },
+      {
+        "title": "Ich bin Rajarajan Madesh 👨‍💻",
+        "content": "Ich bin ein Frontend-Entwickler bei TCS Siruseri mit einer Leidenschaft für Angular, nahtlose UI/UX und die Umsetzung komplexer Ideen in klaren Code.",
+        "bgImage": "assets/about/aboutWork.jpg"
+      },
+      {
+        "title": "Jenseits der Tastatur 🎬📸",
+        "content": "Ich liebe auch Fotografie, bin ein Filmfan und eine neugierige Seele. Ich finde Inspiration in visuellen Geschichten und den kleinen Momenten des Lebens.",
+        "bgImage": "assets/about/aboutBeyondWork.jpg"
+      },
+      {
+        "title": "Was mich antreibt 🌱",
+        "content": "Klares Design. Ehrliche Arbeit. Lebenslanges Lernen. Ich glaube daran, Dinge zu schaffen, die wichtig sind, und dabei bescheiden zu bleiben.",
+        "bgImage": "assets/about/aboutDrivingForce.jpg"
+      }
+    ]
+  },
+  "education": {
+    "title": "Bildung",
+    "educationList": [
+      {
+        "degree": "Sekundarschulbildung",
+        "institution": "Sri Vidya Mandir Schule",
+        "duration": "bis 2014",
+        "score": "92.5 %"
+      },
+      {
+        "degree": "Höhere Schulbildung",
+        "institution": "SRV Boys Höhere Schule",
+        "duration": "2012 - 2014",
+        "score": "86.5 %"
+      },
+      {
+        "degree": "B.E. (Elektrotechnik und Elektronik)",
+        "institution": "Sona College of Technology",
+        "duration": "2014 - 2018",
+        "score": "7.76 CGPA"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Kontaktieren Sie mich",
+    "form": {
+      "name": "Ihr Name",
+      "email": "Ihre E-Mail",
+      "message": "Nachricht",
+      "namePlaceholder": "Geben Sie Ihren Namen ein",
+      "emailPlaceholder": "Geben Sie Ihre E-Mail ein",
+      "messagePlaceholder": "Geben Sie Ihre Nachricht ein..."
+    },
+    "requiredFields": "Bitte füllen Sie alle Pflichtfelder aus.",
+    "submitButton": "Nachricht senden",
+    "thankyouTitle": "Vielen Dank!",
+    "thankYouMessage": "Vielen Dank für Ihre Nachricht! Ich melde mich bald bei Ihnen.",
+    "successMessage": "✅ Nachricht erfolgreich gesendet!",
+    "errorMessage": "❌ Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es später erneut."
+  }
+}
