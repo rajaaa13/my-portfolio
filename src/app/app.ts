@@ -35,5 +35,19 @@ export class App {
 
   changeLanguage(lang: string) {
     this.translation.setLanguage(lang);
+    setTimeout(() => {
+      this.isMobileMenuOpen = false;
+    }, 200); 
   }
+
+  scrollToSection(id: string) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setTimeout(() => {
+      this.isMobileMenuOpen = false;
+    }, 200); 
+  }
+ }
+
 }

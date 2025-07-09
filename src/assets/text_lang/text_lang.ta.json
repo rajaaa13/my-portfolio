@@ -8,11 +8,11 @@
             { "name": "கல்வி", "link": "#education" },
             { "name": "தொடர்பு கொள்ள", "link": "#contact" }
         ],
-        "intro_prefix": "வணக்கம், நான் ",
+        "intro_prefix": "வணக்கம்! நான் ",
         "intro_suffix": "இராஜராஜன் மாதேஷ் ! "
     },
     "home": {
-        "intro_prefix": "வணக்கம்!, நான் ",
+        "intro_prefix": "வணக்கம்! நான் ",
         "intro_suffix": "இராஜராஜன் மாதேஷ்",
         "slides" : [
         {

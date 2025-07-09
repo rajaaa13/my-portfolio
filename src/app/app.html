@@ -20,8 +20,13 @@
 
     <!-- Hamburger Toggle -->
     <button class="md:hidden focus:outline-none" (click)="isMobileMenuOpen = !isMobileMenuOpen">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <!-- hamburger icon when menu is closed -->
+      <svg *ngIf="!isMobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <!-- cross icon when menu is open -->
+      <svg *ngIf="isMobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </button>
   </div>
@@ -29,13 +34,13 @@
   <!-- Mobile Menu -->
   <div *ngIf="isMobileMenuOpen" class="md:hidden bg-black px-4 pb-4">
     <ul class="space-y-2 text-sm">
-      <li><a href="#home" (click)="isMobileMenuOpen = false" class="block py-1 hover:text-cyan-400">{{ translation.translate('base.navbar.0.name') }}</a></li>
-      <li><a href="#about" (click)="isMobileMenuOpen = false" class="block py-1 hover:text-cyan-400">{{ translation.translate('base.navbar.1.name') }}</a></li>
-      <li><a href="#career" (click)="isMobileMenuOpen = false" class="block py-1 hover:text-cyan-400">{{ translation.translate('base.navbar.2.name') }}</a></li>
-      <li><a href="#education" (click)="isMobileMenuOpen = false" class="block py-1 hover:text-cyan-400">{{ translation.translate('base.navbar.3.name') }}</a></li>
-      <li><a href="#contact" (click)="isMobileMenuOpen = false" class="block py-1 hover:text-cyan-400">{{ translation.translate('base.navbar.4.name') }}</a></li>
+      <li><a href="#home" (click)="scrollToSection('home')" class="block py-1 hover:text-cyan-400">{{ translation.translate('base.navbar.0.name') }}</a></li>
+      <li><a href="#about" (click)="scrollToSection('about')" class="block py-1 hover:text-cyan-400">{{ translation.translate('base.navbar.1.name') }}</a></li>
+      <li><a href="#career" (click)="scrollToSection('career')" class="block py-1 hover:text-cyan-400">{{ translation.translate('base.navbar.2.name') }}</a></li>
+      <li><a href="#education" (click)="scrollToSection('education')" class="block py-1 hover:text-cyan-400">{{ translation.translate('base.navbar.3.name') }}</a></li>
+      <li><a href="#contact" (click)="scrollToSection('contact')" class="block py-1 hover:text-cyan-400">{{ translation.translate('base.navbar.4.name') }}</a></li>
       <li>
-        <select (change)="changeLanguage(langSelect.value)" class="w-full bg-black text-white border border-gray-600 rounded px-2 py-1 mt-2">
+        <select #langSelect (change)="changeLanguage(langSelect.value)" class="w-full bg-black text-white border border-gray-600 rounded px-2 py-1 mt-2">
           <option value="en" [selected]="(translation.currentLang$ | async) === 'en'">English</option>
           <option value="ta" [selected]="(translation.currentLang$ | async) === 'ta'">தமிழ்</option>
         </select>
