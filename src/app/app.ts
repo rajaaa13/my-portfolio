@@ -18,6 +18,8 @@ export class App {
   protected title = 'my-portfolio';
   showIntro = true;
   isMobileMenuOpen = false;
+  isScrolled = false;
+  showScrollTop = false;
 
   constructor(public translation: TranslationService) {}
 
@@ -31,23 +33,33 @@ export class App {
         this.showIntro = false;
       }, 5000);
     }
+
+    // Listen for scroll to add navbar background and show scroll-to-top
+    window.addEventListener('scroll', () => {
+      this.isScrolled = window.scrollY > 50;
+      this.showScrollTop = window.scrollY > 600;
+    });
   }
 
   changeLanguage(lang: string) {
     this.translation.setLanguage(lang);
     setTimeout(() => {
       this.isMobileMenuOpen = false;
-    }, 200); 
+    }, 200);
   }
 
-  scrollToSection(id: string) {
-  const el = document.getElementById(id);
-  if (el) {
-    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    setTimeout(() => {
-      this.isMobileMenuOpen = false;
-    }, 200); 
+  scrollToSection(id: string, event?: Event) {
+    event?.preventDefault();
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setTimeout(() => {
+        this.isMobileMenuOpen = false;
+      }, 200);
+    }
   }
- }
 
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }

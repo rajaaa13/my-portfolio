@@ -16,11 +16,11 @@
         "intro_suffix": "Rajarajan Madesh",
         "slides" : [
         {
-          "text": "Frontend Developer, who loves to develops in angular and create beautiful user interfaces.",
+          "text": "Frontend Developer, who loves to develop and create beautiful user interfaces.",
           "animationPath": "assets/lottie/developer.json"
         },
         {
-          "text": "Photography Enthusiast, who always carries a camera to capture the beauty of the world.",
+          "text": "Photography Enthusiast, who loves a camera to capture the beauty of the world.",
           "animationPath": "assets/lottie/photographer.json"
         },
         {
@@ -73,7 +73,7 @@
             },
             {
                 "title": "I’m Rajarajan Madesh 👨‍💻",
-                "content": "I’m a frontend developer working at TCS Siruseri, with a passion for Angular, smooth UI/UX, and turning complex ideas into clean code. By day I code, by night I create, explore, and learn.",
+                "content": "I’m a frontend developer working at TCS Siruseri, with a passion for smooth UI/UX, and turning complex ideas into clean code. By day I code, by night I create, explore, and learn.",
                 "bgImage": "assets/about/aboutWork.jpg"
             },
             {
@@ -109,7 +109,7 @@
               "duration": "2014 - 2018",
               "score": "7.76 CGPA"
             }
-        ]         
+        ]
     },
     "contact" : {
         "title": "Contact Me",

@@ -1,6 +1,4 @@
-.perspective {
-  perspective: 1000px;
-}
-.education-card:hover {
-  transform: rotateY(1deg) rotateX(1deg) scale(1.03);
+:host {
+  display: block;
+  background: #0a0a0a;
 }

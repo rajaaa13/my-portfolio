@@ -1,20 +1,72 @@
-<section class="min-h-screen flex flex-col md:flex-row items-center justify-center bg-black text-white px-6 gap-8">
-  <!-- Left content -->
-  <div class="flex-1 text-center md:text-left">
-    <h1 class="text-5xl md:text-6xl font-extrabold mb-4">
-      {{prefix}} <span class="text-cyan-500">{{name}}</span>
-    </h1>
-    <p [@fadeInOut]="currentIndex" class="text-xl md:text-2xl text-gray-300 max-w-md min-h-[6rem] transition-opacity duration-500">
-      {{ currentText }}
-    </p>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20 pb-16 px-6">
+  <!-- Ambient Background Glows -->
+  <div class="ambient-glow w-[500px] h-[500px] bg-brand-500/30 -top-48 -right-48 absolute"></div>
+  <div class="ambient-glow w-[400px] h-[400px] bg-violet-500/20 -bottom-32 -left-32 absolute"></div>
+  <div class="ambient-glow w-[300px] h-[300px] bg-brand-400/10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 absolute"></div>
+
+  <!-- Content Container -->
+  <div class="relative z-10 max-w-6xl w-full mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-16">
+
+    <!-- Left: Text Content -->
+    <div class="flex-1 text-center md:text-left space-y-6">
+      <!-- Greeting Tag -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-sm text-neutral-400">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Available for opportunities
+      </div>
+
+      <!-- Main Heading -->
+      <h1 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1]">
+        <span class="text-white">{{ prefix }}</span>
+        <br class="hidden sm:block">
+        <span class="gradient-text">{{ name }}</span>
+      </h1>
+
+      <!-- Rotating Subtitle -->
+      <div class="min-h-[4.5rem] md:min-h-[5rem]">
+        <p [@fadeInOut]="currentIndex"
+          class="text-lg md:text-xl text-neutral-400 leading-relaxed max-w-lg mx-auto md:mx-0">
+          {{ currentText }}
+        </p>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-wrap gap-4 justify-center md:justify-start pt-2">
+        <a href="#contact"
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-brand-500 to-brand-600 text-white font-semibold text-sm hover:from-brand-400 hover:to-brand-500 transition-all duration-300 shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 hover:-translate-y-0.5">
+          Get in Touch
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+        <a href="#career"
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/[0.04] border border-white/[0.08] text-neutral-300 font-semibold text-sm hover:bg-white/[0.08] hover:border-white/[0.15] transition-all duration-300 hover:-translate-y-0.5">
+          View My Work
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: Lottie Animation -->
+    <div class="flex-1 flex justify-center md:justify-end">
+      <div class="relative">
+        <!-- Glow ring behind animation -->
+        <div class="absolute inset-0 rounded-full bg-gradient-to-br from-brand-500/20 to-violet-500/10 blur-3xl scale-110"></div>
+        <ng-lottie
+          [options]="options"
+          [@fadeInOut]="currentIndex"
+          class="relative z-10"
+          style="width: min(350px, 80vw); height: min(350px, 80vw);">
+        </ng-lottie>
+      </div>
+    </div>
   </div>
 
-  <!-- Right animation -->
-  <div class="flex-1 flex justify-center md:justify-end">
-    <ng-lottie 
-        [options]="options" 
-        [@fadeInOut]="currentIndex" 
-        style="width: 300px; height: 300px;">
-    </ng-lottie>
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-neutral-600">
+    <span class="text-xs tracking-widest uppercase">Scroll</span>
+    <div class="w-5 h-8 rounded-full border border-neutral-700 flex items-start justify-center p-1">
+      <div class="w-1 h-2 rounded-full bg-neutral-500 animate-bounce"></div>
+    </div>
   </div>
 </section>

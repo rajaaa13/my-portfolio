@@ -1,18 +1,62 @@
-    <section class="bg-[#0e0e0e] text-white py-20 px-4 md:px-10 lg:px-20">
-      <h2 class="text-4xl font-bold mb-12 text-center">{{title}}</h2>
+<section class="relative py-24 px-6 lg:px-8 overflow-hidden">
+  <!-- Ambient Glow -->
+  <div class="ambient-glow w-[350px] h-[350px] bg-violet-500/15 -top-24 -left-24 absolute"></div>
+  <div class="ambient-glow w-[300px] h-[300px] bg-brand-500/10 bottom-0 -right-20 absolute"></div>
 
-      <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3 perspective">
-        <div
-          *ngFor="let edu of educationList; let i = index"
-          class="education-card opacity-0 blur-sm transform transition-all duration-700 ease-in-out hover:scale-[1.03] hover:shadow-xl hover:shadow-cyan-500/10 bg-white bg-opacity-5 backdrop-blur-lg rounded-xl p-6 cursor-default"
-          [ngClass]="{
-            'translate-y-10': true
-          }"
-        >
-          <h3 class="text-xl font-semibold text-cyan-300 mb-1">{{ edu.degree }}</h3>
-          <p class="text-sm text-gray-300 mb-2">{{ edu.institution }}</p>
-          <p class="text-xs text-gray-400 mb-1">{{ edu.duration }}</p>
-          <p class="text-sm text-gray-200 font-medium">{{ edu.score }}</p>
+  <div class="relative z-10 max-w-6xl mx-auto">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs text-neutral-400 uppercase tracking-widest mb-4">
+        <span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>
+        Academics
+      </div>
+      <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white">
+        {{ title }}
+      </h2>
+      <div class="section-divider mt-6"></div>
+    </div>
+
+    <!-- Education Cards Grid -->
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div
+        *ngFor="let edu of educationList; let i = index"
+        class="education-card opacity-0 blur-sm translate-y-10 transform transition-all duration-700 ease-out"
+        [style.transition-delay]="i * 150 + 'ms'">
+
+        <div class="relative glass-card glass-card-hover rounded-2xl p-6 md:p-8 h-full group">
+          <!-- Top Gradient Accent -->
+          <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-500/40 to-transparent"></div>
+
+          <!-- Index Number -->
+          <div class="text-6xl font-display font-bold text-white/[0.03] absolute top-4 right-6 select-none">
+            {{ (i + 1).toString().padStart(2, '0') }}
+          </div>
+
+          <!-- Icon -->
+          <div class="w-12 h-12 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center mb-5 group-hover:bg-violet-500/20 transition-colors duration-300">
+            <svg class="w-5 h-5 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+            </svg>
+          </div>
+
+          <!-- Degree -->
+          <h3 class="font-display text-lg md:text-xl font-bold text-white mb-2 group-hover:text-violet-300 transition-colors duration-300">
+            {{ edu.degree }}
+          </h3>
+
+          <!-- Institution -->
+          <p class="text-sm text-neutral-400 mb-4">{{ edu.institution }}</p>
+
+          <!-- Duration & Score -->
+          <div class="flex items-center justify-between pt-4 border-t border-white/[0.06]">
+            <span class="text-xs text-neutral-500 font-mono">{{ edu.duration }}</span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs text-emerald-400 font-semibold">
+              {{ edu.score }}
+            </span>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>

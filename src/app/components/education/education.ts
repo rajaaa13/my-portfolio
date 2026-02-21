@@ -12,13 +12,9 @@ import { CommonModule } from '@angular/common';
 export class Education {
   langSub?: Subscription;
   educationList  : { degree: string; institution: string; duration: string; score: string }[] = [];
-  title = ''; 
+  title = '';
   constructor(public translation: TranslationService) {}
-  
-  ngAfterViewInit(): void {
-    throw new Error('Method not implemented.');
-  }
-  
+
   ngOnInit(): void {
     this.langSub = this.translation.translations$.subscribe(() => {
       this.title = this.translation.translate('education.title') as string;
@@ -46,4 +42,7 @@ export class Education {
     }, 0);
   }
 
+  ngOnDestroy(): void {
+    this.langSub?.unsubscribe();
+  }
 }

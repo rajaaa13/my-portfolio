@@ -1,50 +1,89 @@
-<section id="contact" class="min-h-screen flex items-center justify-center bg-black py-12 px-4">
-  <div
-    class="w-full max-w-2xl bg-cyan-950 bg-opacity-10 backdrop-blur-md rounded-xl shadow-lg p-8 text-white border border-cyan-600 transition-all duration-500 ease-in-out"
-  >
-    <h2 class="text-3xl font-bold text-center mb-6 text-white-400">{{ formSubmitted ? contactObj.thankyouTitle : contactObj.title}}</h2>
+<section class="relative py-24 px-6 lg:px-8 overflow-hidden">
+  <!-- Ambient Glow -->
+  <div class="ambient-glow w-[400px] h-[400px] bg-brand-500/15 -bottom-32 -right-32 absolute"></div>
+  <div class="ambient-glow w-[300px] h-[300px] bg-violet-500/10 -top-20 -left-20 absolute"></div>
 
-    <!-- Contact Form -->
-    <form
-      *ngIf="!formSubmitted"
-      #contactForm="ngForm"
-      (ngSubmit)="sendEmail(contactForm)"
-      class="space-y-6 transition-opacity duration-500 ease-in-out"
-      [ngClass]="{ 'opacity-0 pointer-events-none scale-95': formSubmitted, 'opacity-100': !formSubmitted }"
-    >
-      <!-- Name -->
-      <div>
-        <label class="block mb-2 text-white-300">{{contactObj.form.name}}</label>
-        <input name="user_name" required ngModel [placeholder]="contactObj.form.namePlaceholder"
-          class="w-full px-4 py-3 rounded-md bg-cyan-900 bg-opacity-20 backdrop-blur-lg text-white placeholder-cyan-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition" />
+  <div class="relative z-10 max-w-2xl mx-auto">
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs text-neutral-400 uppercase tracking-widest mb-4">
+        <span class="w-1.5 h-1.5 rounded-full bg-brand-400"></span>
+        Say Hello
       </div>
+      <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white">
+        {{ formSubmitted ? contactObj?.thankyouTitle : contactObj?.title }}
+      </h2>
+      <div class="section-divider mt-6"></div>
+    </div>
 
-      <!-- Email -->
-      <div>
-        <label class="block mb-2 text-white-300">{{contactObj.form.email}}</label>
-        <input name="user_email" type="email" required ngModel [placeholder]="contactObj.form.emailPlaceholder"
-          class="w-full px-4 py-3 rounded-md bg-cyan-900 bg-opacity-20 backdrop-blur-lg text-white placeholder-cyan-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition" />
-      </div>
+    <!-- Contact Form Card -->
+    <div class="glass-card rounded-2xl p-8 md:p-10">
+      <!-- Form -->
+      <form
+        *ngIf="!formSubmitted"
+        #contactForm="ngForm"
+        (ngSubmit)="sendEmail(contactForm)"
+        class="space-y-6 transition-opacity duration-500 ease-in-out"
+        [ngClass]="{ 'opacity-0 pointer-events-none scale-95': formSubmitted, 'opacity-100': !formSubmitted }">
 
-      <!-- Message -->
-      <div>
-        <label class="block mb-2 text-white-300">{{contactObj.form.message}}</label>
-        <textarea name="message" rows="4" required ngModel [placeholder]="contactObj.form.messagePlaceholder"
-          class="w-full px-4 py-3 rounded-md bg-cyan-900 bg-opacity-20 backdrop-blur-lg text-white placeholder-cyan-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition"></textarea>
-      </div>
+        <!-- Name Field -->
+        <div class="space-y-2">
+          <label class="block text-sm font-medium text-neutral-300">{{ contactObj?.form?.name }}</label>
+          <input
+            name="user_name"
+            required
+            ngModel
+            [placeholder]="contactObj?.form?.namePlaceholder"
+            class="w-full px-4 py-3.5 rounded-xl bg-white/[0.03] border border-white/[0.08] text-white placeholder-neutral-600 text-sm focus:outline-none focus:ring-1 focus:ring-brand-500/50 focus:border-brand-500/40 hover:border-white/[0.15] transition-all duration-300" />
+        </div>
 
-      <!-- Submit -->
-      <div class="text-center">
-        <button type="submit"
-          class="bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-purple-600 hover:to-cyan-500 text-white px-6 py-3 rounded-md font-semibold shadow-md transition duration-300">
-          {{contactObj.submitButton}}
-        </button>
+        <!-- Email Field -->
+        <div class="space-y-2">
+          <label class="block text-sm font-medium text-neutral-300">{{ contactObj?.form?.email }}</label>
+          <input
+            name="user_email"
+            type="email"
+            required
+            ngModel
+            [placeholder]="contactObj?.form?.emailPlaceholder"
+            class="w-full px-4 py-3.5 rounded-xl bg-white/[0.03] border border-white/[0.08] text-white placeholder-neutral-600 text-sm focus:outline-none focus:ring-1 focus:ring-brand-500/50 focus:border-brand-500/40 hover:border-white/[0.15] transition-all duration-300" />
+        </div>
+
+        <!-- Message Field -->
+        <div class="space-y-2">
+          <label class="block text-sm font-medium text-neutral-300">{{ contactObj?.form?.message }}</label>
+          <textarea
+            name="message"
+            rows="5"
+            required
+            ngModel
+            [placeholder]="contactObj?.form?.messagePlaceholder"
+            class="w-full px-4 py-3.5 rounded-xl bg-white/[0.03] border border-white/[0.08] text-white placeholder-neutral-600 text-sm focus:outline-none focus:ring-1 focus:ring-brand-500/50 focus:border-brand-500/40 hover:border-white/[0.15] transition-all duration-300 resize-none"></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="pt-2">
+          <button
+            type="submit"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-brand-500 to-brand-600 text-white font-semibold text-sm hover:from-brand-400 hover:to-brand-500 transition-all duration-300 shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 hover:-translate-y-0.5">
+            {{ contactObj?.submitButton }}
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+            </svg>
+          </button>
+        </div>
+      </form>
+
+      <!-- Thank You State -->
+      <div *ngIf="formSubmitted" class="flex flex-col items-center justify-center py-12 text-center animate-fade-in">
+        <div class="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-6">
+          <svg class="w-8 h-8 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <p class="text-lg font-semibold text-white mb-2">{{ contactObj?.successMessage }}</p>
+        <p class="text-sm text-neutral-400 max-w-md">{{ contactObj?.thankYouMessage }}</p>
       </div>
-    </form>
-    <!-- Thank You Card -->
-    <div *ngIf="formSubmitted" class="flex flex-col items-center justify-center h-full text-center animate-fade-in">
-      <p class="text-cyan-100">{{contactObj.successMessage}}</p>
-      <p class="text-cyan-200 mt-2 text-sm">{{contactObj.thankYouMessage}}</p>
     </div>
   </div>
 </section>

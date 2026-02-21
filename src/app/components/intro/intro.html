@@ -1,14 +1,16 @@
 <div
-  class="fixed inset-0 z-50 bg-black text-white flex items-center justify-center overflow-hidden"
->
-  <h1 
-    class="text-5xl md:text-6xl font-extrabold mb-4 animate-intro text-left"
+  class="fixed inset-0 z-50 bg-[#0a0a0a] text-white flex items-center justify-center overflow-hidden">
+  <!-- Ambient Background -->
+  <div class="ambient-glow w-[500px] h-[500px] bg-brand-500/20 top-1/4 left-1/4 absolute animate-glow-pulse"></div>
+  <div class="ambient-glow w-[400px] h-[400px] bg-violet-500/15 bottom-1/4 right-1/4 absolute animate-glow-pulse" style="animation-delay: 1.5s"></div>
+
+  <h1
+    class="relative z-10 font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight animate-intro text-center"
     style="
-      --moveX: calc(-50vw + 2.5rem); /* move to left padding of home */
-      --moveY: calc(-10vh + 0.5rem); /* move up to home heading position */
+      --moveX: calc(-50vw + 2.5rem);
+      --moveY: calc(-10vh + 0.5rem);
     "
-    id="intro-heading"
-  >
-    {{ displayedPrefix }}<span class="text-cyan-500">{{ displayedName }}</span><span class="typing-cursor">|</span>
+    id="intro-heading">
+    <span class="text-white">{{ displayedPrefix }}</span><span class="gradient-text">{{ displayedName }}</span><span class="typing-cursor">|</span>
   </h1>
 </div>

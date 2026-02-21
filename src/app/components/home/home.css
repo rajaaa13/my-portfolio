@@ -1,7 +1,13 @@
+:host {
+  display: block;
+  background: #0a0a0a;
+  position: relative;
+}
+
 .animate-blink {
   display: inline-block;
   width: 1px;
-  background-color: #60a5fa;
+  background-color: #06b6d4;
   animation: blink 1s steps(1) infinite;
 }
 
