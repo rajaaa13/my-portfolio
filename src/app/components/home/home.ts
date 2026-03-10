@@ -13,8 +13,8 @@ import { Subscription } from 'rxjs';
    animations: [
     trigger('fadeInOut', [
       transition('* => *', [
-        style({ opacity: 0 }),
-        animate('600ms ease-in', style({ opacity: 1 }))
+        animate('300ms ease-out', style({ opacity: 0 })),
+        animate('300ms ease-in', style({ opacity: 1 }))
       ])
     ])
   ]

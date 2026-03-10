@@ -4,10 +4,17 @@
   (touchstart)="onTouchStart($event)"
   (touchend)="onTouchEnd($event)">
 
-  <!-- Background Image with Overlay -->
+  <!-- Background Images (stacked, cross-fade via opacity) -->
   <div
-    class="w-full min-h-[85vh] md:min-h-screen bg-cover bg-center bg-no-repeat transition-all duration-700 ease-in-out"
-    [ngStyle]="{'background-image': 'url(' + aboutSteps[currentIndex].bgImage + ')'}">
+    *ngFor="let step of aboutSteps; let i = index"
+    class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+    [ngStyle]="{'background-image': 'url(' + step.bgImage + ')'}"
+    [style.opacity]="i === currentIndex ? 1 : 0"
+    [style.transition]="'opacity 700ms ease-in-out'">
+  </div>
+
+  <!-- Content wrapper (provides height and holds overlays) -->
+  <div class="relative w-full min-h-[85vh] md:min-h-screen">
 
     <!-- Multi-layered Overlay for premium depth -->
     <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-black/60 to-black/30"></div>
